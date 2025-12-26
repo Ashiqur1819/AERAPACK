@@ -16,10 +16,6 @@ app.use("/users", usersRouter)
 app.use("/products", productsRouter)
 
 
-// app.get("/", (req, res) => {
-//     res.send("Server is running")
-// })
-
 app.listen(3000, () => {
     console.log("Server is running")
 })
