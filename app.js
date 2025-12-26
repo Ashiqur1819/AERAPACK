@@ -11,13 +11,14 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 
-app.get("/owners", ownersRouter)
-app.get("/users", usersRouter)
-app.get("/products", productsRouter)
+app.use("/owners", ownersRouter)
+app.use("/users", usersRouter)
+app.use("/products", productsRouter)
 
-app.get("/", (req, res) => {
-    res.send("Server is running")
-})
+
+// app.get("/", (req, res) => {
+//     res.send("Server is running")
+// })
 
 app.listen(3000, () => {
     console.log("Server is running")
