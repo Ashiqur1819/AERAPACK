@@ -1,13 +1,14 @@
 const mongoose = require("mongoose");
+const config = require("config")
+const dbgr = require("debug")("development:mongoose");
 
 mongoose
-  .connect("mongodb://localhost:27017/aerapackDB")
+  .connect(`${config.get("MONGODB_URI")}/aerapackDB`)
   .then(() => {
-    console.log("Mongodb Connected");
+    dbgr("MongoDB Connected Done");
   })
   .catch((err) => {
-    console.log(err);
+    dbgr("MongoDB Error:", err);
   });
-
 
 module.exports = mongoose.connection
