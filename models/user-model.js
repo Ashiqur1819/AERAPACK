@@ -8,7 +8,6 @@ const userSchema = mongoose.Schema({
         type: Array,
         default: []
     },
-    isadmin: Boolean,
     orders: {
         type: Array,
         default: []
@@ -17,4 +16,6 @@ const userSchema = mongoose.Schema({
     image: String
 })
 
-module.exports = mongoose.model("user", userSchema)
+const User = mongoose.models.user || mongoose.model("user", userSchema);
+
+module.exports =  User;

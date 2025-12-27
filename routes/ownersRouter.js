@@ -24,10 +24,4 @@ router.post("/create", async(req, res) => {
     res.send(createdOwner)
 })
 
-router.get("/create", async(req, res) => {
-    const owner = await ownerModel.find()
-
-    res.send(owner)
-})
-
 module.exports = router
