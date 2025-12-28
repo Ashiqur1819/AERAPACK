@@ -18,6 +18,8 @@ const registerUser = async (req, res) => {
           password: hash,
         });
 
+        const token = jwt.sign({ email }, "Nusrat");
+        res.cookie("token", token)
         res.send(createdUser);
       });
     });
